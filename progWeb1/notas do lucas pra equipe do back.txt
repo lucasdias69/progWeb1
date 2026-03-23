@@ -6,4 +6,7 @@ criei o arquivo sql
 
 transacoes.sql
 
+importante que o sistema barre se o email não for no formato e-mail
+
+
 conforme o projeto for avançando vou criando mais e alterando.
