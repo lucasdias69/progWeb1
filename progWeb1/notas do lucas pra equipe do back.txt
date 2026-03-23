@@ -1,0 +1,9 @@
+piazada, seguinte:
+se vcs estranharem pq eu usei um varchar pra tantos dígitos pra senha, é por conta que, durante as minhas pesquisas, falaram que se o back criptografar a validação da senha fica mais profissional.
+vcs vão precisar abrir o MySql pelo xampp e importar esse arquivo pra lá, aí sim vão conseguir usar o banco de dados quando tivem fazendo o arquivo php.
+
+criei o arquivo sql
+
+transacoes.sql
+
+conforme o projeto for avançando vou criando mais e alterando.
