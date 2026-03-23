@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Carteira Acadêmica</title>
-<link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <main class="container">
@@ -12,8 +12,8 @@
     <p class="lead">Organize suas finanças, defina metas e simule investimentos.</p>
 
     <div class="card actions">
-      <a class="btn" href="login.html">Entrar</a>
-      <a class="link" href="register.html">Não tem login? Faça agora</a>
+      <a class="btn" href="login.php">Entrar</a>
+      <a class="link" href="register.php">Não tem login? Faça agora</a>
     </div>
 
     <footer class="small">Projeto acadêmico — versão inicial</footer>
