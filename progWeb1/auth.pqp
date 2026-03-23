@@ -1,0 +1,46 @@
+<?php
+session_start();
+include("db.php");
+
+$acao = $_POST['acao'];
+
+if ($acao == "register") {
+    $nome = $_POST['fullname'];
+    $email = $_POST['email'];
+    $senha = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+    $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $nome, $email, $senha);
+
+    if ($stmt->execute()) {
+        header("Location: login.php");
+    } else {
+        echo "Erro ao cadastrar";
+    }
+}
+
+if ($acao == "login") {
+    $email = $_POST['username'];
+    $senha = $_POST['password'];
+
+    $sql = "SELECT * FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 1) {
+        $user = $result->fetch_assoc();
+
+        if (password_verify($senha, $user['senha'])) {
+            $_SESSION['usuario'] = $user['nome'];
+            header("Location: dashboard.php");
+        } else {
+            echo "Senha incorreta";
+        }
+    } else {
+        echo "Usuário não encontrado";
+    }
+}
+?>
